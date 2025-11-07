@@ -1,0 +1,137 @@
+:root {
+  --viridian: #6b9080ff;
+  --cambridge-blue: #a4c3b2ff;
+  --mint-green: #cce3deff;
+  --azure-web: #eaf4f4ff;
+  --mint-cream: #f6fff8ff;
+
+  --text-dark: #333d29;
+  --text-light: #fefee3;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  background: var(--mint-cream);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1.25rem;
+  background: var(--azure-web);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(107,144,128,0.18);
+}
+
+h1,h2,h3 { color: var(--viridian); margin-top: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--mint-green);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+.card h3 { margin: .25rem 0 .5rem; color: var(--viridian); }
+.card .price { font-weight: 700; }
+.card .stock { font-size: .9rem; opacity: .8; }
+
+input, select, button, textarea {
+  width: 100%;
+  padding: .8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--cambridge-blue);
+  background: var(--mint-cream);
+  color: var(--text-dark);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--viridian);
+  box-shadow: 0 0 0 3px rgba(107,144,128,0.15);
+}
+
+button {
+  background: var(--viridian);
+  color: var(--text-light);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .2s ease, transform .05s ease;
+}
+button:hover { background: var(--cambridge-blue); }
+button:active { transform: translateY(1px); }
+
+/* Navbar */
+.navbar {
+  background: var(--viridian);
+  color: var(--text-light);
+  padding: .8rem 1.2rem;
+  position: sticky; top: 0; z-index: 50;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+.navbar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.navbar .brand { font-weight: 800; color: var(--mint-cream); letter-spacing: .4px; }
+.navbar a { color: var(--mint-cream); text-decoration: none; margin: 0 .7rem; font-weight: 600; }
+.navbar a:hover { text-decoration: underline; }
+.nav-actions { display: flex; align-items: center; gap: .6rem; }
+.logout-btn { background: var(--cambridge-blue); color: var(--text-dark); padding: .45rem .8rem; border-radius: 8px; }
+
+/* Auth cards */
+.auth-page { min-height: calc(100vh - 56px); display: grid; place-items: center; background: linear-gradient(135deg, var(--mint-cream), var(--mint-green)); }
+.auth-card { width: 380px; background: var(--azure-web); padding: 1.4rem; border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+.role-row { display:flex; gap: 1rem; justify-content: center; margin: .5rem 0 0.8rem; }
+
+/* Tables */
+.table {
+  width: 100%; border-collapse: collapse; background: var(--mint-cream);
+  border-radius: 12px; overflow: hidden;
+}
+.table th, .table td { border: 1px solid var(--mint-green); padding: .75rem; text-align: center; }
+.badge { padding: .2rem .5rem; border-radius: 999px; font-weight: 700; font-size: .85rem; }
+.badge.success { background: #d9f8df; color: #1e8b3f; }
+.badge.warn { background: #fff4d6; color: #7a5c00; }
+.badge.info { background: #d9f1ff; color: #0a5b8a; }
+
+/* Cart quantity control styles */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.quantity-controls button {
+  background-color: var(--cambridge-blue);
+  color: var(--mint-cream);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quantity-controls button:hover {
+  background-color: var(--viridian);
+}
+
+.quantity-controls span {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 24px;
+  text-align: center;
+}
