@@ -57,6 +57,7 @@ The database maintains relationships between **customers, sellers, products, car
 | **Seller** | `SellerID (PK)` | Seller profile with business details. |
 | **Product** | `ProductID (PK)` | Product catalog information. |
 | **Cart** | `CartID (PK)` | Stores items before order placement. |
+| **CartItem** | `CartItemID (PK), CartID (FK), ProductID (FK), Quantity` | Links specific products to a customer’s cart. |
 | **Order** | `OrderID (PK)` | Customer order information. |
 | **OrderDetails** | `OrderDetailID (PK)`, `OrderID (FK)`, `ProductID (FK)` | Links products to orders. |
 | **Payment** | `PaymentID (PK)` | Tracks payment method, amount, and status. |
